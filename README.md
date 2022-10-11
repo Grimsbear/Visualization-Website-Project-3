@@ -1,1 +1,2 @@
-# Visualization-Website-Project-3
+# Visualization-Website-Project
+Project 3
