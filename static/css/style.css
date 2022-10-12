@@ -3,30 +3,46 @@ html {
 }
 
 body {
-  /* background-color: black; */
   padding: 0;
   margin: 0;
   height: 100%;
+  /* Shoutout to css-tricks */
+  /* https://css-tricks.com/perfect-full-page-background-image/ */
+  background: url(/static/images/wood.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #navbar-base {
+  padding: 0;
+}
 
+.navbar {
+  /*  */
 }
 
 #text-block {
-  background-color: white;
+  position: relative;
+  background-color: rgba(255, 253, 232, 0.93);
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 10px ridge gold;
 }
 
 #visual-block {
-  background-color: white;
+  /* background-color: white; */
 }
 
 .row {
   margin: 50px;
+  background-color: white;
 }
 
 .col {
-  margin: 20px
+  margin: 20px;
+  background-color: pink;
 }
 
 #alcohol_gauge {
@@ -43,14 +59,12 @@ body {
 
 #a-map {
   /* background-color: rgb(217, 255, 0, 0.5); */
-  height: 590px;
-  width: 590px;
+  height: 520px;
+  width: 520px;
 }
 
-#unemployment_map {
-  background-color: rgb(255, 68, 0, 0.5);
-}
-
-#map {
-  height: 100%;
+#u-map {
+  /* background-color: rgb(255, 68, 0, 0.5); */
+  height: 520px;
+  width: 520px;
 }
