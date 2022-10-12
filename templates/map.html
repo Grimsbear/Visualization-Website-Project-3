@@ -22,62 +22,53 @@
     <!-- D3 library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
-    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="static/css/map_style.css">
 
 </head>
 
 <body>
-
-    <!-- Navbar Base -->
-    <div class="container-fluid" id="navbar-base">
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-
-                <!-- NavBar -->
-              <a class="navbar-brand" href="https://github.com/mmyang123/Visualization-Website-Project" target="_blank" id="navbrand">
-                <img src="/static/images/github_logo.png" alt="GitHub" width="30" height="30">
-                Group 10
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                    <!-- 1st Nav Item -->
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href={{ url_for("IndexRoute") }}>Home</a>
-                  </li>
-
-                    <!-- 2nd Nav Item -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Datasets
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" target="_blank" href={{ url_for("CountriesRoute") }}>API</a></li>
-                      <li><a class="dropdown-item" target="_blank" href="https://www.kaggle.com/datasets/mysarahmadbhat/alcohol-consumption">Alcohol Consumption</a></li>
-                      <li><a class="dropdown-item" target="_blank" href="https://www.kaggle.com/datasets/pantanjali/unemployment-dataset">Unemployment</a></li>
-                    </ul>
-                  </li>
-
-                  <!-- 3rd Nav Item -->
-                  <li class="nav-item">
-                    <a class="nav-link active" href={{ url_for("MapRoute") }}>Map</a>
-                  </li>
-                </ul>
-
-                <!-- Search Bar -->
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search for a Country..." aria-label="Search" id="data-search-bar">
-                    <button class="btn btn-outline-success" type="button" id="data-search-button">Search</button>
-                  </form>
-              </div>
-            </div>
-          </nav>
-    </div>
-    <!-- Body Elements -->
-
+  <!-- Navbar Base -->
+  <div class="container" id="navbar-base">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <!-- GitHub Route -->
+        <a class="navbar-brand" href="https://github.com/Grimsbear/Visualization-Website-Project-3" target="_blank" id="navbrand">
+          <img src="/static/images/github_logo.png" alt="GitHub" width="30" height="30">Group 10</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Home Route -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href={{ url_for("IndexRoute") }}>Home</a>
+            </li>
+            <!-- DataSet Routes -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Datasets</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" target="_blank" href={{ url_for("CountriesRoute") }}>API</a></li>
+                <li><a class="dropdown-item" href={{ url_for("GraphsRoute") }}>Graphs</a></li>
+                <li><a class="dropdown-item" target="_blank" href="https://www.kaggle.com/datasets/mysarahmadbhat/alcohol-consumption">Alcohol Consumption</a></li>
+                <li><a class="dropdown-item" target="_blank" href="https://www.kaggle.com/datasets/pantanjali/unemployment-dataset">Unemployment</a></li>
+              </ul>
+            </li>
+            <!-- Map Route -->
+            <li class="nav-item">
+              <a class="nav-link active" href={{ url_for("MapRoute") }}>Map</a>
+            </li>
+          </ul>
+          <!-- Search Bar for API -->
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search for a Country..." aria-label="Search" id="data-search-bar">
+            <button class="btn btn-outline-success" type="button" id="data-search-button">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Body Elements -->
     <div id="map"></div>
 
     <script type="text/javascript" src="/static/js/map.js"></script>

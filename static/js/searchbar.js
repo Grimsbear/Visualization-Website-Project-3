@@ -7,9 +7,10 @@ searchInput.addEventListener("input", (e) => {
     // console.log(value);
 })
 
-searchButton = document.getElementById("data-search-button")
+const searchButton = document.getElementById("data-search-button")
 
-function searchSubmit() {
+function searchSubmit(event) {
+    event.preventDefault();
     filename = searchInput.value;
     // console.log(filename);
     window.location.href = `/countries/${filename}`;
@@ -17,5 +18,6 @@ function searchSubmit() {
 
 // Shout out to John T who somehow made the function below work
 searchButton.addEventListener("click", searchSubmit, false);
+searchInput.addEventListener("change", searchSubmit, false);
 // Shout out to it also breaking only when I displayed to the group
-// Still works though
+// Still works though... sometimes
