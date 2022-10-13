@@ -36,19 +36,18 @@ _________________________________________________________________________
 
  3. Push the above changes to GitHub.
 
- 4. Open a GitBash (Window) or Terminal (Mac) to the *Visualization-Website-Project 3* repo, and activate *PythonData38* then type 'Jupyter Notebook' and hit Enter. to clean both datasets using jupyter notebook. for the ETL process, we filtered columns in Unemployment dataset to only use the recorded year 2010 since Alcohol Consumption has only values for the recorded year 2010. 
+ 4. Open a GitBash (Window) or Terminal (Mac) to the *Visualization-Website-Project 3* repo, and activate *PythonData38* then type 'Jupyter Notebook' and hit Enter. to clean both   datasets using jupyter notebook. for the ETL process, we filtered columns in Unemployment dataset to only use the recorded year 2010 since Alcohol Consumption has only values for the recorded year 2010. 
 
- 3. Once step two has completed, open PgAdmin to access PostgreSQL. Create a database called *AlcoholUnemployment_db*.
+ 5 . Once step two has completed, open PgAdmin to access PostgreSQL. Create a database called *AlcoholUnemployment_db*.
 
-4. Open a query tool in the database, and then open the *Schema.sql* file from the repository.
+ 6. Open a query tool in the database, and then open the *Schema.sql* file from the repository.
 
-5. On the GitBash or command console type in Flask run and it will tell you which port it's running on you can go to the app. Don't close this window.
+ 7. On the GitBash or command console type in Flask run and it will tell you which port it's running on you can go to the app. Don't close this window.
 
-7. 
+ 8. 
 
-8.
+ 9.
 
-9.
 
 
 
