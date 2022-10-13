@@ -71,49 +71,42 @@
     </nav>
   </div>
   <!-- Body Elements -->
-  <div class="container text-center">
-    <div class="row justify-content-md-center"  id="text-block">
-      <div class="col-6">
-        <article>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam dolor nisi rem magnam asperiores nulla dolorem architecto saepe eos reiciendis, dicta ratione vitae! Debitis ipsum dolorum corporis placeat vel.</p>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam dolor nisi rem magnam asperiores nulla dolorem architecto saepe eos reiciendis, dicta ratione vitae! Debitis ipsum dolorum corporis placeat vel.</p>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit nam dolor nisi rem magnam asperiores nulla dolorem architecto saepe eos reiciendis, dicta ratione vitae! Debitis ipsum dolorum corporis placeat vel.</p>
-        </article>
-      </div>
-    </div>
-  </div>
   <div class="container text-center" id="visual-block">
     <div class="row">
       <div class="col">
-      <!-- Gauge for Alcohol -->
-        <div id="alcohol_gauge">
-          -gauge-here-
+      <!-- Country Info -->
+      <div class="panel panel-primary" id="panel1">
+        <div class="panel-heading">
+          <h3 class="panel-title">Alcohol Info</h3>
         </div>
+        <div id="country-info" class="panel-body">
+        </div>
+      </div>
       </div>
       <div class="col">
         <!-- Specific Country -->
         <div id="country_selector">
-          -selector-here-
+          <div class="well">
+            <h3>Country</h3>
+            <select id="selDataset" onchange="optionChanged(this.value)">
+            </select>
+          </div>
         </div>
       </div>
       <div class="col">
         <!-- Gauge for Unemployment -->
-        <div id="unemployment_gauge">
-          -gauge-here-
+        <div class="panel panel-primary" id="panel2">
+          <div class="panel-heading">
+            <h3 class="panel-title">Unemployment Info</h3>
+          </div>
+          <div id="unemployment-info" class="panel-body">
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <!-- Map for Alcohol -->
-        <div id="a-map"></div>
-      </div>
-      <div class="col">
-        <!-- Map for Unemployment -->
-        <div id="u-map">
-          -map-here-
-        </div>
-      </div>
+    <div class="row" id="mainmap">
+        <!-- Map for Home -->
+        <div id="map"></div>
     </div>
   </div>
 

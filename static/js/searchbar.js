@@ -11,13 +11,25 @@ const searchButton = document.getElementById("data-search-button")
 
 function searchSubmit(event) {
     event.preventDefault();
-    filename = searchInput.value;
-    // console.log(filename);
-    window.location.href = `/countries/${filename}`;
+    let query = searchInput.value;
+    if (query != "") {
+        let destination = `/countries/${query}`;
+        window.open(destination, "_blank");
+        searchInput.value = "";
+    }
 }
+
+function searchbarSubmit(event) {
+    event.preventDefault()
+    let query = searchInput.value;
+    if (query != "") {
+        let destination = `/countries/${query}`;
+        window.open(destination, "_blank");
+        searchInput.value = "";
+    }
+}
+
 
 // Shout out to John T who somehow made the function below work
 searchButton.addEventListener("click", searchSubmit, false);
-searchInput.addEventListener("change", searchSubmit, false);
-// Shout out to it also breaking only when I displayed to the group
-// Still works though... sometimes
+searchInput.addEventListener("change", searchbarSubmit, false);

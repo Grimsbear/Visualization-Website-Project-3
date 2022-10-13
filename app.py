@@ -55,16 +55,19 @@ def CountriesRoute():
 
     data = []
     for country,beer_servings,spirit_servings,wine_servings,total_litres_of_pure_alcohol,unemployment_rate in results:
-        dict = {}
-        dict["country"] = country
-        dict["beer_servings"] = beer_servings
-        dict["spirit_servings"] = spirit_servings
-        dict["wine_servings"] = wine_servings
-        dict["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
-        dict["unemployment_rate"] = unemployment_rate
-        data.append(dict)
+        country_dict = {}
+        country_dict["country"] = country
+        country_dict["info"] = []
+        info = {}
+        info["beer_servings"] = beer_servings
+        info["spirit_servings"] = spirit_servings
+        info["wine_servings"] = wine_servings
+        info["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
+        info["unemployment_rate"] = unemployment_rate
+        country_dict["info"].append(info)
+        data.append(country_dict)
+        
 
-    #webpage = render_template("dataset1.html")
     return jsonify(data)
 
 # DataSet Specific Route
@@ -84,14 +87,17 @@ def CountrySpecificRoute(filename):
 
     data = []
     for country,beer_servings,spirit_servings,wine_servings,total_litres_of_pure_alcohol,unemployment_rate in results:
-        dict = {}
-        dict["country"] = country
-        dict["beer_servings"] = beer_servings
-        dict["spirit_servings"] = spirit_servings
-        dict["wine_servings"] = wine_servings
-        dict["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
-        dict["unemployment_rate"] = unemployment_rate
-        data.append(dict)
+        country_dict = {}
+        country_dict["country"] = country
+        country_dict["info"] = []
+        info = {}
+        info["beer_servings"] = beer_servings
+        info["spirit_servings"] = spirit_servings
+        info["wine_servings"] = wine_servings
+        info["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
+        info["unemployment_rate"] = unemployment_rate
+        country_dict["info"].append(info)
+        data.append(country_dict)
 
     search_term = filename.replace(" ", "").lower()
     for country in data:
@@ -101,6 +107,7 @@ def CountrySpecificRoute(filename):
             return jsonify(country)
 
     return jsonify({"error": f"Data for : {search_term} not found."}), 404
+
 
 # Map Route
 @app.route("/map")
