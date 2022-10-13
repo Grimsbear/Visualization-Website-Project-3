@@ -4,12 +4,14 @@
 
 _________________________________________________________________________
 
-## Project 3 Title : Visualization-Website-Project
+## Project 3 Title : Visualization-Website-Project 3
 
 _________________________________________________________________________
 
 # **Overview**
-- ### In Project 3, our group used two csv files of two different datasets, and . Both datasets needed ELT work done on it and then selected year 2010 for our project. We used pandas and extracted the tables from various sources, transformed and cleaned it and combined datasets to one dataframe. After that we loaded to PostgreSQL database to create a Schema table. The code in this repository showed the various ways the HTML, JavaScript, PostgreSQL, and Flask server might all work together to support Project 3.
+- ### In Project 3, our group created a data visualization rather than a data analysis, and it allows us to show what we've learned in our boot camp class from up to this point of the course! In this project, we've build a website that allows the user to investigate an explore a particular topic and in our case selecting name of a country. We also build a database and Flask server that works behind the scenes to make the website run smoothly. 
+
+- ### Our group used 2 csv files and the links are provided below, one is the Unemployment dataset and the second one is the Alcohol Consumption from all over the world for the recorded year 2010.
 
 - ### Please create the repository to your desktop and clone it and then follow the instructions below.
 
@@ -22,7 +24,7 @@ Links:
 
 - Data 2: https://www.kaggle.com/datasets/pantanjali/unemployment-dataset
 
-- ### GitHub Link: [Visualization-Website-Project](https://github.com/mmyang123/Visualization-Website-Project)
+- ### GitHub Link: [Visualization-Website-Project](https://github.com/Grimsbear/Visualization-Website-Project-3)
 
 _________________________________________________________________________
 
@@ -34,17 +36,13 @@ _________________________________________________________________________
 
  3. Push the above changes to GitHub.
 
- 
- 
- 4. Open a GitBash (Window) or Terminal (Mac) to the *Visualization-Website-Project 3* repo, and activate *PythonData38* and type 'Jupyter Notebook' and hit Enter. to perform the ETL, and Pandas to load and converted DataFrame to Database.
+ 4. Open a GitBash (Window) or Terminal (Mac) to the *Visualization-Website-Project 3* repo, and activate *PythonData38* then type 'Jupyter Notebook' and hit Enter. to clean both datasets using jupyter notebook. for the ETL process, we filtered columns in Unemployment dataset to only use the recorded year 2010 since Alcohol Consumption has only values for the recorded year 2010. 
 
  3. Once step two has completed, open PgAdmin to access PostgreSQL. Create a database called *AlcoholUnemployment_db*.
 
 4. Open a query tool in the database, and then open the *Schema.sql* file from the repository.
 
-5. Run the "create table" code.
 
-6. Open up another terminal on the repository and activate 'Python
 
 7. 
 
