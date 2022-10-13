@@ -42,7 +42,7 @@ _________________________________________________________________________
 
 4. Open a query tool in the database, and then open the *Schema.sql* file from the repository.
 
-
+5. On the GitBash or command console type in Flask run and it will tell you which port it's running on you can go to the app. Don't close this window.
 
 7. 
 
