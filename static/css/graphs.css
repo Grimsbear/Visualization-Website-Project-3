@@ -1,0 +1,70 @@
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /* Shoutout to css-tricks */
+  /* https://css-tricks.com/perfect-full-page-background-image/ */
+  background: url(/static/images/wood.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#navbar-base {
+  padding: 0;
+}
+
+.navbar {
+  /*  */
+}
+
+#text-block {
+  position: relative;
+  background-color: rgba(255, 253, 232, 0.93);
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 10px ridge gold;
+}
+
+#visual-block {
+  /* background-color: white; */
+}
+
+.row {
+  margin: 50px;
+  background-color: white;
+}
+
+.col {
+  margin: 20px;
+  background-color: pink;
+}
+
+#alcohol_gauge {
+  background-color: rgba(77, 0, 107, 0.5);
+}
+
+#country_selector {
+  background-color: rgb(38, 0, 255, 0.5);
+}
+
+#unemployment_gauge {
+  background-color: rgb(0, 223, 122, 0.5);
+}
+
+#a-map {
+  /* background-color: rgb(217, 255, 0, 0.5); */
+  height: 520px;
+  width: 520px;
+}
+
+#u-map {
+  /* background-color: rgb(255, 68, 0, 0.5); */
+  height: 520px;
+  width: 520px;
+}
