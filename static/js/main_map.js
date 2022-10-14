@@ -9,24 +9,36 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 d3.json("/static/data/countries.geojson").then(function(data){
-  // console.log(data);
+  // console.log(data.features[0].properties);
 
-    L.geoJson(data, {
-        style: function(feature) {
-          return {
-            color: "black",
-            fillColor: chooseColor2(feature.properties.ADMIN),
-            fillOpacity: 0.5,
-            weight: 1.5
-          };
-        },
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup("<h5>" + feature.properties.ADMIN + "</h5>");
-        }
-    }).addTo(myMap);
+  // let myAdmins = data.features.map(o => o.ADMIN);
+  // console.log(myAdmins);
+  // chooseColor(feature.properties.ADMIN);
+  L.geoJson(data, {
+    style: function(feature) {
+      return {
+      // whatever: chooseColor(feature.properties.ADMIN),
+      color: "black",
+      fillColor: chooseColor(feature.properties.ADMIN),
+      fillOpacity: 0.5,
+      weight: 1.5
+    };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("<h5>" + feature.properties.ADMIN + "</h5>");
+    }
+  }).addTo(myMap);
 });
 
 const url = "/countries"
+
+let colorLookUp = {};
+
+d3.json(url).then(data => {
+  data.forEach(o => {
+    colorLookUp[o.country] = o.info[0].total_litres_of_pure_alcohol;
+  });
+});
 
 // Shout out to Dom's help on HW 14 came in handy with making these functions
 
@@ -42,10 +54,10 @@ function ShowCountryData(currentCountry)
         let countryData = `
         <h4>Country : ${item.country}<h4/>
         <hr>
-        <h5>Beer Servings(L) : ${item.info[0].beer_servings}<h5>
-        <h5>Wine Servings(L) : ${item.info[0].wine_servings}<h5>
-        <h5>Spirit Servings(L) : ${item.info[0].spirit_servings}<h5>
-        <h5>Total Average Litres(L) : ${item.info[0].total_litres_of_pure_alcohol}<h5>
+        <h5>Beer Servings : ${item.info[0].beer_servings}L<h5>
+        <h5>Wine Servings : ${item.info[0].wine_servings}L<h5>
+        <h5>Spirit Servings : ${item.info[0].spirit_servings}L<h5>
+        <h5>Total Average Litres : ${item.info[0].total_litres_of_pure_alcohol}<h5>
         `;
         d3.select('#country-info').html(countryData);
       }
@@ -73,37 +85,39 @@ function ShowUnemploymentData(currentCountry)
   });
 }
 
-function chooseColor2(country) 
+// Choose Color
+function chooseColor(geocountry) 
 {
-  return "red";
+  let total = colorLookUp[geocountry]
+  if (total > 12) {
+    return "Violet";
+  }
+  else if (total > 10) {
+    return "Indigo";
+  }
+  else if (total > 8) {
+    return "Blue";
+  }
+  else if (total > 6) {
+    return "Green";
+  }
+  else if (total > 4) {
+    return "Yellow";
+  }
+  else if (total > 2) {
+    return "Orange";
+  }
+  else if (total > 0) {
+    return "Red";
+  }
+  else if (total == 0) {
+    return "DarkGrey";
+  }
+  else {
+    return "Black";
+  }
 }
 
-// Choose Color
-// function chooseColor(country) 
-// {
-//   d3.json(url).then(data => {
-//     for (const key in data) {
-//       if (Object.hasOwnProperty.call(data, key)) {
-//         const element = data[key];
-//         if (element.country == country) {
-//           let total = element.info[0].total_litres_of_pure_alcohol;
-//           if (total == 0) {
-//             console.log(`${country} has no drinking`);
-//             return "red";
-//           }
-//           else if (total > 0) {
-//             console.log(`${country} has drinking`);
-//             return "green";
-//           }
-//           else {
-//             console.log(`${country} has no data`);
-//             return "grey";
-//           }
-//         }
-//       }
-//     }
-//   });
-// }
 
 // Option Changer
 function optionChanged(currentCountry) 
