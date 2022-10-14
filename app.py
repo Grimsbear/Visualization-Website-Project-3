@@ -17,7 +17,7 @@ import json
 username = 'postgres'  # Ideally this would come from config.py (or similar)
 password = 'bootcamp'  # Ideally this would come from config.py (or similar)
 database_name = 'AlcoholUnemployment_db'
-port_number = '5432' # Check your own port number!
+port_number = '5433' # Check your own port number!
 connection_string = f'postgresql://{username}:{password}@localhost:{port_number}/{database_name}'
 
 # Connect to the SQL database

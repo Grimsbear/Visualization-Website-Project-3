@@ -13,6 +13,9 @@
     <!-- Our CSS -->
     <link rel="stylesheet" href="static/css/style.css">
 
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
 </head>
 
 <body>
@@ -57,6 +60,94 @@
     </nav>
   </div>
   <!-- Body Elements -->
+  <div class="container">
+    <h1>ChartJS Line Chart with JSON Data API</h1>
+    <div>
+      <canvas id="line" width="800" height="400" aria-label="Hello Chart"></canvas>
+    </div>
+  </div>
+
+  <!-- Linegraph -->
+  <script>
+    // fetch Block
+    async function fetchData() {
+      const url = 'http://127.0.0.1:5000/countries'
+      const response = await fetch(url);
+
+      const datapoints = await response.json();
+      console.log(datapoints);
+    }
+
+    let linelabels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+  
+    let linedata = {
+      labels: linelabels,
+      datasets: [{
+        label: 'Animated Line Chart',
+        fill: false,
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 45],
+      }]
+    };
+
+    const plugin = {
+      id: 'custom_canvas_background_color',
+      beforeDraw: (chart) => {
+        const {ctx} = chart;
+        ctx.save();
+        ctx.globalCompositeOperation = 'destination-over';
+        ctx.fillStyle = 'lightGreen';
+        ctx.fillRect(0, 0, chart.width, chart.height);
+        ctx.restore();
+      }
+    };
+  
+    let lineconfig = {
+      type: 'line',
+      data: linedata,
+      plugins: [plugin],
+      options: {
+        layout: {
+            padding: 20
+        },
+        animations: {
+            tension: {
+                duration: 1000,
+                easing: 'linear',
+                from: 1,
+                to: 0,
+                loop: true
+            }
+        },
+        scales: {
+      y: { // defining min and max so hiding the dataset does not change scale range
+        min: 0,
+        max: 50
+      }
+        
+      }
+    }
+};
+
+    let lineChart = new Chart(
+      document.getElementById('line'),
+      lineconfig
+    );
+
+   
+  </script>
+  <script>
+    
+  </script>
+
 
   <script src="/static/js/searchbar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
