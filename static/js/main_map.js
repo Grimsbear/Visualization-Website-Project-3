@@ -36,7 +36,7 @@ let colorLookUp = {};
 
 d3.json(url).then(data => {
   data.forEach(o => {
-    colorLookUp[o.country] = o.info[0].total_litres_of_pure_alcohol;
+    colorLookUp[o.country] = o.total_litres_of_pure_alcohol;
   });
 });
 
@@ -54,10 +54,10 @@ function ShowCountryData(currentCountry)
         let countryData = `
         <h4>Country : ${item.country}<h4/>
         <hr>
-        <h5>Beer Servings : ${item.info[0].beer_servings}L<h5>
-        <h5>Wine Servings : ${item.info[0].wine_servings}L<h5>
-        <h5>Spirit Servings : ${item.info[0].spirit_servings}L<h5>
-        <h5>Total Average Litres : ${item.info[0].total_litres_of_pure_alcohol}<h5>
+        <h5>Beer Servings : ${item.beer_servings}L<h5>
+        <h5>Wine Servings : ${item.wine_servings}L<h5>
+        <h5>Spirit Servings : ${item.spirit_servings}L<h5>
+        <h5>Total Average Litres : ${item.total_litres_of_pure_alcohol}<h5>
         `;
         d3.select('#country-info').html(countryData);
       }
@@ -77,7 +77,7 @@ function ShowUnemploymentData(currentCountry)
         let unemploymentData = `
         <h4>Country : ${item.country}<h4>
         <hr>
-        <h5>Unemployment Rate : ${item.info[0].unemployment_rate}%
+        <h5>Unemployment Rate : ${item.unemployment_rate}%
         `
         d3.select('#unemployment-info').html(unemploymentData);
       }

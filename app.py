@@ -57,14 +57,17 @@ def CountriesRoute():
     for country,beer_servings,spirit_servings,wine_servings,total_litres_of_pure_alcohol,unemployment_rate in results:
         country_dict = {}
         country_dict["country"] = country
-        country_dict["info"] = []
-        info = {}
-        info["beer_servings"] = beer_servings
-        info["spirit_servings"] = spirit_servings
-        info["wine_servings"] = wine_servings
-        info["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
-        info["unemployment_rate"] = unemployment_rate
-        country_dict["info"].append(info)
+        country_dict["beer_servings"] = beer_servings
+        country_dict["spirit_servings"] = spirit_servings
+        country_dict["wine_servings"] = wine_servings
+        country_dict["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
+        country_dict["unemployment_rate"] = unemployment_rate
+        # info["beer_servings"] = beer_servings
+        # info["spirit_servings"] = spirit_servings
+        # info["wine_servings"] = wine_servings
+        # info["total_litres_of_pure_alcohol"] = total_litres_of_pure_alcohol
+        # info["unemployment_rate"] = unemployment_rate
+        # country_dict["info"].append(info)
         data.append(country_dict)
         
 
