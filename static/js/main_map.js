@@ -89,7 +89,7 @@ function ShowUnemploymentData(currentCountry)
 function chooseColor(geocountry) 
 {
   let total = colorLookUp[geocountry]
-  if (total > 12) {
+  if (total >= 12) {
     return "Violet";
   }
   else if (total > 10) {
@@ -111,7 +111,7 @@ function chooseColor(geocountry)
     return "Red";
   }
   else if (total == 0) {
-    return "DarkGrey";
+    return "DarkGray";
   }
   else {
     return "Black";
