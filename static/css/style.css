@@ -19,6 +19,14 @@ body {
   padding: 0;
 }
 
+#color-palette {
+  text-shadow:
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000; 
+}
+
 .row {
   margin: 50px;
   /* background-color: white; */
