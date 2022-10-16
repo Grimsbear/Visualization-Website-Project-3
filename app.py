@@ -111,14 +111,6 @@ def CountrySpecificRoute(filename):
 
     return jsonify({"error": f"Data for : {search_term} not found."}), 404
 
-
-# Map Route
-@app.route("/map")
-def MapRoute():
-
-    webpage = render_template("map.html")
-    return webpage
-
 # Graph Route
 @app.route("/graphs")
 def GraphsRoute():
