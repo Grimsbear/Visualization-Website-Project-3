@@ -11,7 +11,7 @@ _________________________________________________________________________
 # **Overview**
 - ### In Project 3, our group created a data visualization rather than a data analysis, and it allows us to show what we've learned in our boot camp class from up to this point of the course! In this project, we've built a website that allows the user to investigate and explore a particular topic by selecting the name of a country. We also built a database and Flask server that works behind the scenes to make the website run smoothly. 
 
-- ### Our group used 2 csv files (the links are provided below), the first is the Unemployment dataset and the second is the Alcohol Consumption both data sets contain data from countries all over the world for the record year 2010.
+- ### Our group used 2 csv files (the links are provided below), the first is the Unemployment dataset and the second is the Alcohol Consumption, and both data sets contain data from countries all over the world for the record year 2010.
 
 
 
@@ -58,17 +58,17 @@ _________________________________________________________________________
 
  ## Setup the Flask application
 
- 1. Open app.py in your editor and navigate to the section for connection parameters.
+ 1. Add the app.py file
 
- 2. Change your connection parameters to match what your connection parameters are in postgres.
+ 2. In app.py, add code to connect to the PostgreSQL database *AlcoholUnemployment_db*.
 
- 3. Open your GitBash or Terminal and type ```python app.py```. (*Note : This will not work if the enviroment from earlier isn't still active*)
+ 3. Add flask routes for */*, */countries*, */countries/<filename>*, */map*, and */graphs*.
 
- 4. Observe that the flask server is running on your localhost or http://127.0.0.1:5000/
+ 4. On the GitBash or command console type in Flask run and it will tell you which port it's running on you can go to the app. Don't close this window. It's the Flask's job to provide all web pages and other data to your website. 
 
- 5. Open a Google Chrome browser and in the search bar enter ```http://127.0.0.1:5000/```
+ 5. Your project must have a Flask server that provides an index route to pull the API map route from the database, and the database we used for this project is PostgreSQL. We used PgAdmin to create our Schema and table.
 
- 6. Observe the website
+ 6. Make sure to push any changes frequently to your GitHub repository.
 
 
 
